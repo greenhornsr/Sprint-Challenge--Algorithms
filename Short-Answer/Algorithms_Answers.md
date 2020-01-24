@@ -22,7 +22,7 @@ Answer:
             f = current floor
         return eggs break at f or higher.
 
-    runtime complexity: O(1)
+    runtime complexity: O(n)
 # n = story building
 # f = floor
 # ~ eggs
