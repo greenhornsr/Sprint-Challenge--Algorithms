@@ -2,18 +2,29 @@
 
 ## Exercise I
 
-a) exponential O(a^n)
-    as the size of the input increases the runtime or space used will grow at a faster rate.
+a) exponential O(n)
+    a single operation ran on n
 
-b) constant O(n)
-    if n is 1 or 0; Only looping through 1 set of data capped by n; the operation will only go a set number of times based on n
-    otherwise, I am not sure how to apply BIG O notation to an infinite loop.
-    while j < n and n is never altered...
+b) constant n(log(n))
+    as the number n increases the runtime /space used will grow at a slightly slower rate 
 
-c)  O(1)
-    operation is unaffected by n
+c)  O(bunnies)
+    operation runs for every bunny
 
 
 ## Exercise II
+Answer:
+    Start at ground floor(0) of building with (n) floors
+        drop an egg, 
+        if egg doesn't break    
+            move to the next floor
+        else 
+            f = current floor
+        return eggs break at f or higher.
 
-
+    runtime complexity: O(n)
+# n = story building
+# f = floor
+# ~ eggs
+# break = f floor + 
+# not break = f floor - 
