@@ -100,22 +100,22 @@ class SortingRobot:
             # check if robot can move right since starting position is index 0 (is there a list?)
             while self.can_move_right():
                 # Compare item,
-                if self.compare_item() == None or self.compare_item() == 1:
+                if self.compare_item() == None or self.compare_item() == -1:
                     # swap item to place empty item in list and grab current item.
                     self.swap_item()
                     print(self._item)
                     self.move_right()
-                elif self.compare_item() == 0 or -1:
+                elif self.compare_item() == 0 or self.compare_item() == 1:
                     # check if i can move right,
-                    if self.can_move_right():
-                        self.move_right()
-                    elif self.can_move_right() == False:
-                        # light off
-                        self.set_light_off()
-                        # check if can move left
-                        while self.can_move_left():
-                            # move left
-                            self.move_left()
+                    self.move_right()
+                    
+            if self.can_move_right() == False:
+                # light off
+                self.set_light_off()
+                # check if can move left
+                while self.can_move_left():
+                    # move left
+                    self.move_left()
 
 
         """
