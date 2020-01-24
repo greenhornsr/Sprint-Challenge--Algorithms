@@ -5,7 +5,7 @@
 a) exponential O(n)
     a single operation ran on n
 
-b) constant n(log(n))
+b) constant O(n log(n))
     as the number n increases the runtime /space used will grow at a slightly slower rate 
 
 c)  O(bunnies)
@@ -22,7 +22,7 @@ Answer:
             f = current floor
         return eggs break at f or higher.
 
-    runtime complexity: O(n)
+    runtime complexity: O(1)
 # n = story building
 # f = floor
 # ~ eggs
