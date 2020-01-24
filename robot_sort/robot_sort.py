@@ -93,23 +93,36 @@ class SortingRobot:
         return self._light == "ON"
 
     def sort(self):
-        if self.light_is_on() is False:
+        # if self.light_is_on() is False:
+        if self.compare_item() is None:
             self.swap_item()
             self.set_light_on()
             print(self._light)
-        if self.can_move_right():
-            while self.can_move_right():
-                print("i can move left!")
+        while self.light_is_on() is True:
+            if self.can_move_right():
+                print("can move right?: ", self.can_move_right())
+                self.move_right()
                 if self.compare_item() == 0 or self.compare_item() == 1:
                     print("moving right cuz of 0/1")
-                elif self.compare_item() == -1: 
-                    print("gonna swap my item", self._item)
-                    break
-        else:
-            while self.can_move_left():
-                self.move_left()
-                print("moving left!")    
-        # self.set_light_off()
+                    self.move_right()
+                print("my item", self.compare_item())
+                if self.compare_item() == -1:
+                    print("this one is bigger than my", self._item)
+                    self.swap_item()
+                    print("this one is bigger than my", self._item)
+                    self.move_right()
+                self.swap_item()
+                print("gonna swap my item, i now have: ", self._item)
+                self.set_light_off()
+            if self.can_move_left():
+                while self.can_move_left():
+                    self.move_left()
+                    # self.swap_item()
+                    print("moving left!", self._item)   
+            # elif self.can_move_right() is None:
+                print("hmmm")
+                self.sort()
+        print("done")    
 
 
             # if self.light_is_on() == False:
